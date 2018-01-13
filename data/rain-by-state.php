@@ -1,7 +1,7 @@
 <?php
 
-$state = $_GET['state'];
-$date = $_GET['date'];
+$state = isset($_GET['state']) ? $_GET['state'] : '';
+$date = isset($_GET['date']) ? $_GET['date'] : '';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -11,12 +11,10 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 $obj = json_decode($result);
-echo $result->access_token;
 
-$data = $result; // json string
+$data = $result; // JSON string
 
 if(array_key_exists('callback', $_GET)){
-
     header('Content-Type: text/javascript; charset=utf8');
     header('Access-Control-Allow-Origin: http://www.example.com/');
     header('Access-Control-Max-Age: 3628800');
@@ -26,8 +24,6 @@ if(array_key_exists('callback', $_GET)){
     echo $callback.'('.$data.');';
 
 }else{
-    // normal JSON string
     header('Content-Type: application/json; charset=utf8');
-
     echo $data;
 }

@@ -2,8 +2,6 @@
 // map
 // http://leafletjs.com/examples/quick-start/example.html
 
-
-
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
@@ -185,7 +183,7 @@ getData = function() {
     mymap.panTo(latlng, {animate:false}).setZoom(zoom);
 
     var url = "data/rain-by-state.php?state="+state+"&date="+date;
-    //var url = "data/tn-data.json";
+    //var url = "data/tn-data.json"; // test data
 
     $.getJSON( url, function( data ) {
         placeMarkers(data);

@@ -19,12 +19,10 @@ var mymap = L.map('map').setView([39.02772, -96.76758], 4);
 var markers = new Array();
 var rainArr = new Array();
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Rain data <a href="https://creativecommons.org/licenses/by/3.0/">CC</a> <a href="http://www.cocorahs.org/">CoCoRaHS</a> | Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    attribution: 'Rain data <a href="https://creativecommons.org/licenses/by/3.0/">CC</a> <a href="http://www.cocorahs.org/">CoCoRaHS</a> | Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Map tiles by <a href="https://carto.com/location-data-services/basemaps/">Basemaps</a>',
     maxZoom:        18,
     detectRetina:   true,
-    id:             'mapbox.light',
-    accessToken:    'pk.eyJ1IjoiY2FsZSIsImEiOiJjaXd1eTN2amQwMHd3Mm9wcnNoc3Z4czFkIn0.8YNSxAQ0qONw-mUDcCQVmA'
 }).addTo(mymap);
 
 var icon1 = L.icon({

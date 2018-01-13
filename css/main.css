@@ -63,8 +63,18 @@ textarea {
     width:100%;
 }
 
-#nav select {
-    margin:20px 0 20px 20px;
+#nav select:first-child {
+    margin-left:20px;
+}
+
+#select {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.stats {
+    display:inline-block;
+    margin-left:20px;
 }
 
 .precip {
@@ -87,22 +97,12 @@ textarea {
     color:#ccc;
 }
 
-.stats {
-    display:inline-block;
-    margin-left:20px;
+@media only screen and (max-width: 480px) {
+    select {
+        margin-top:20px;
+        width:80px;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Media Queries

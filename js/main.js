@@ -9,12 +9,10 @@ var yyyy = today.getFullYear();
 var state = "TN";
 var stateName = "Tennessee";
 
-var navHeight = $( "#nav" ).height();
-
-$( "#map" ).height($(window).height() - navHeight);
+$( "#map" ).height($(window).height() - $( "#nav" ).height());
 
 $( window ).resize(function() {
-    $( "#map" ).height($(window).height() - navHeight);
+    $( "#map" ).height($(window).height() - $( "#nav" ).height());
 });
 
 var mymap = L.map('map').setView([39.02772, -96.76758], 4);
